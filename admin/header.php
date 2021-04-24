@@ -21,7 +21,7 @@
         <a href="addAdmin.php"><div class="List"> Add Admin </div></a>
         <a href="removeAdmin.php"><div class="List"> Remove Admin </div></a>
         <a href="notifications.php"><div class="List"> Notifications </div></a>
-        <a href="upload.php"><div class="List"> Upload </div></a>
+        <a href="uploadProduct.php"><div class="List"> Upload </div></a>
         <a href="system.php"><div class="List"> System </div></a>
         <a href="dashboard.php?logout=true"><div class="List"> Logout </div></a>
     </div>
