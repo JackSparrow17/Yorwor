@@ -1,5 +1,6 @@
 <?php
     include('../Includes/conn.php');
+    error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +85,7 @@
         $imagename = $_FILES['image']['name'];
         $imagetmpname = $_FILES['image']['tmp_name'];
         //$extension= $_FILES['image']['type'];
-        $imagenewname = uniqid().".".strtolower(end(explode('.',$_FILES['image']['name'])));
+        $imagenewname = uniqid().".".strtolower(end(explode('.',$imagename)));
 		$targetpath = "../Uploads/Products/".$category."/".$imagenewname;
 
         if($category != "CHOOSE CATEGORY"){

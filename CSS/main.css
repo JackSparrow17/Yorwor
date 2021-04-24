@@ -33,3 +33,22 @@ html {
 .Wide {
     width: 100%;
 }
+
+#Mask {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba (0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    display: none;
+}
+
+#closeMenu {
+    color: red;
+    margin: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 2.1rem;
+}

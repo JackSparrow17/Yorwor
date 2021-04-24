@@ -75,6 +75,24 @@ MOBILE PHONES
         background-color: var(--Secondary);
         margin-left: -6px;
     }
+    #Filter {
+        position: relative;
+        left: 13.5rem;
+        color: gray;
+        top: 2px;
+        z-index: 2;
+    }
+    .Search-Categories {
+        display: none;
+        width: 80%;
+        background-color: white;
+        border-radius: 8px;
+        min-height: 30vh;
+        position: fixed;
+        top: 20vh;
+        left: 10%;
+        z-index: 2;
+    }
     /* Categories */
     .Categories {
         display: grid;

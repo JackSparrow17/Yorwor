@@ -25,6 +25,7 @@
 
 <body>
     <div class="Container Wide">
+        <div id="Mask"></div>
         <!-- Callout -->
         <div class="Callout Wide" id="SearchArea">
             <div class="Brand">
@@ -46,10 +47,24 @@
 
                 <div class="Search-Form">
                     <form>
+                        <span id="Filter"><i class="fa fa-sort"></i></span>
                         <input type="text" placeholder="Type your search here..." name="search-word"/>
                         <button type="submit" name="search-btn"> <i class="fa fa-search"></i> </button>
+
+                        <div class="Search-Categories">
+                            <span id="closeMenu"><i class="fa fa-times-circle"></i></span>
+                           <div class="Header-Text">
+                                All Categories
+                           </div>
+
+                            <ul>
+                               <li><input type="radio" name="categories" value="vehicles"/> <span class="Label">Vehicles</span></li>
+                               <li><input type="radio" name="categories" value="electronics"/> <span class="Label">Electronics</span></li>
+                            </ul>
+                        </div>
                     </form>
                 </div>
+                
             </div>
         </div>
 
@@ -141,6 +156,8 @@
             <a href="#"><i class="fa fa-search"></i></a>
             <span><i class="fa fa-user"></i></span>
         </div>
-    </div>
+    </div>4
+
+    <script src="JS/home.js"></script>
 </body>
 </html>

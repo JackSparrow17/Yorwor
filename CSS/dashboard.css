@@ -54,7 +54,8 @@ MOBILE PHONES
         }
         .Content {
             padding: 10px;
-            width: 100%;
+            width: 95%;
+            margin: 10px auto;
         }
         /* Overview */
         .Overview {
