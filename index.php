@@ -25,48 +25,7 @@
 
 <body>
     <div class="Container Wide">
-        <div id="Mask"></div>
-        <!-- Callout -->
-        <div class="Callout Wide" id="SearchArea">
-            <div class="Brand">
-                Brand
-                <a href="#"> Sign In </a>
-                <a href="#"> Register </a>
-            </div>
-
-            <div class="Extras">
-                <span id="Account"><i class="fa fa-user"></i></span>  
-            </div>
-        </div>
-        <!-- Banner -->
-        <div class="Banner Wide">
-            <div class="Inner">
-                <div class="Text">
-                    What are you looking for?
-                </div>
-
-                <div class="Search-Form">
-                    <form>
-                        <span id="Filter"><i class="fa fa-sort"></i></span>
-                        <input type="text" placeholder="Type your search here..." name="search-word"/>
-                        <button type="submit" name="search-btn"> <i class="fa fa-search"></i> </button>
-
-                        <div class="Search-Categories">
-                            <span id="closeMenu"><i class="fa fa-times-circle"></i></span>
-                           <div class="Header-Text">
-                                All Categories
-                           </div>
-
-                            <ul>
-                               <li><input type="radio" name="categories" value="vehicles"/> <span class="Label">Vehicles</span></li>
-                               <li><input type="radio" name="categories" value="electronics"/> <span class="Label">Electronics</span></li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                
-            </div>
-        </div>
+        <?php include('Includes/header.php');?>
 
         <!-- Product Categories -->
         <div class="Categories Wide">
@@ -144,20 +103,41 @@
             </div>
 
             <div class="Inner Wide">
-                Inner
+                <?php 
+                    //Products
+                    $productsSQL = "SELECT * FROM `products`";
+                    $productsQuery = mysqli_query($conn, $productsSQL);
+
+                    while($productsData = mysqli_fetch_assoc($productsQuery)){
+                        $imagepath = "Uploads/Products/".$productsData['category']."/".$productsData['image'];
+
+                        echo "
+                            <div class='Item'>
+                                
+                                <div class='Image Wide' style='background-image: url(".$imagepath.");'>
+                                </div>
+                                <a class='Flex-Center cartBtn' href='index.php?cartValue=".$productsData['name']."' name='cartBtn'>
+                                    <i class='fa fa-shopping-cart'></i>
+                                </a>
+            
+                                <div class='Details Wide'>
+                                    <div class='Product-Name Wide'>".$productsData['name']."</div>
+                                    <div class='Product-Price Wide'> GH&#8373;".$productsData['price'].".00</div>
+                                </div>
+                        </div>
+                        ";
+                       // echo $imagepath;
+                    }
+
+                    
+                ?>
             </div>
         </div>
+        
+        <!-- Footer -->
+        <?php include('Includes/footer.php')?>
+    </div>
 
-        <!-- Navigation -->
-        <div class="Navigation Wide">
-            <a href="index.php"><i class="fa fa-home"></i></a>
-            <span href="#"><i class="fa fa-star"></i></span>
-            <span class="Primary"><i class="fa fa-shopping-cart"></i></span>
-            <a href="#"><i class="fa fa-search"></i></a>
-            <span><i class="fa fa-user"></i></span>
-        </div>
-    </div>4
-
-    <script src="JS/home.js"></script>
+    
 </body>
 </html>

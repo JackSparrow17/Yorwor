@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#Filter").click(function() {
-        $('.Search-Categories').show();
+        $('.Search-Categories').css("display", "block");
         $('#Mask').show();
     });
 
@@ -10,7 +10,8 @@ $(document).ready(function() {
     });
 
     $('#closeMenu').click(function() {
-        var parentDiv = $('#closeMenu').parent.attr('class');
-        alert(parentDiv);
+        var parentDiv = '.' + $('#closeMenu').parent().attr('class');
+        $(parentDiv).hide();
+        $('#Mask').hide();
     });
 });
