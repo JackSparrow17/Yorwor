@@ -1,3 +1,6 @@
+<?php
+    include('Includes/conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,8 +124,12 @@
 
         <!-- Recent Uploads -->
         <div class="Recent-Uploads Wide">
-            <div class="Header-Text">
+            <div class="Header-Text Wide">
                 Top Products
+            </div>
+
+            <div class="Inner Wide">
+                Inner
             </div>
         </div>
 

@@ -4,14 +4,6 @@ MOBILE PHONES
 ================
 */
 
-div {
-    border: 1px solid red;
-}
-
-.Wide {
-    width: 100%;
-}
-
 @media (max-width: 720px) {
     /* Callout */
     .Callout,
@@ -26,6 +18,7 @@ div {
         grid-template-columns: 1fr 1fr;
         background-color: var(--Primary);
         box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.75);
+        z-index: 3;
     }
     .Callout .Extras,
     .Callout #Account,
@@ -48,7 +41,7 @@ div {
         height: 45px;
         justify-content: center;
         border: 2px solid var(--Light);
-        background-color: gray;
+        background-color: rgb(145, 145, 145);
     }
     /* Banner */
     .Banner {
@@ -113,6 +106,13 @@ div {
         margin-bottom: 10vh;
         padding: 10px;
     }
+    .Recent-Uploads .Inner {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        margin-top: 20px;
+    }
+    .Recent-Uploads .Inner .Item {}
     /* Navigation */
     .Navigation {
         top: 90vh;
