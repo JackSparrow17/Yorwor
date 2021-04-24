@@ -1,0 +1,142 @@
+/*
+================
+MOBILE PHONES
+================
+*/
+
+div {
+    border: 1px solid red;
+}
+
+.Wide {
+    width: 100%;
+}
+
+@media (max-width: 720px) {
+    /* Callout */
+    .Callout,
+    .Navigation {
+        height: 10vh;
+        left: 0;
+        position: fixed;
+    }
+    .Callout {
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--Primary);
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.75);
+    }
+    .Callout .Extras,
+    .Callout #Account,
+    .Callout .Brand,
+    .Navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 1.7rem;
+        color: white;
+    }
+    .Callout .Brand {
+        justify-content: flex-start;
+        font-size: 1rem;
+    }
+    .Callout #Account {
+        margin: 0 10px;
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+        border: 2px solid var(--Light);
+        background-color: gray;
+    }
+    /* Banner */
+    .Banner {
+        margin-top: 10vh;
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #2a7ce7;
+    }
+    .Banner .Inner {
+        text-align: center;
+        font-size: 1.3rem;
+        color: var(--Light);
+        font-weight: 600;
+    }
+    .Banner input,
+    .Banner button {
+        padding: 16px 26px;
+        border: 1px solid var(--Light);
+    }
+    .Banner .Search-Form {
+        margin-top: 30px;
+    }
+    .Banner input {
+        border-radius: 8px 0 0 8px;
+    }
+    .Banner button {
+        border-radius: 0 8px 8px 0;
+        color: var(--Light);
+        background-color: var(--Secondary);
+        margin-left: -6px;
+    }
+    /* Categories */
+    .Categories {
+        display: grid;
+        padding: 5px;
+        grid-gap: 5px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        background-color: var(--Light);
+    }
+    .Categories .Item {
+        text-align: center;
+        background-color: white;
+        border: 0;
+        padding: 5px;
+    }
+    .Categories a,
+    .Categories a:active,
+    .Categories a:visited {
+        font-size: 0.7rem;
+        text-decoration: none;
+        color: gray;
+        margin: 10px;
+    }
+    .Categories img {
+        max-width: 80%;
+    }
+    /* Recent Uploads */
+    .Recent-Uploads {
+        margin-bottom: 10vh;
+    }
+    /* Navigation */
+    .Navigation {
+        top: 90vh;
+        background-color: var(--Primary);
+        justify-content: center;
+    }
+    .Navigation a,
+    .Navigation a:active,
+    .Navigation a:visited,
+    .Navigation span {
+        color: white;
+        margin: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+    .Navigation .Primary,
+    .Navigation .Primary:active,
+    .Navigation .Primary:visited {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        border-radius: 100%;
+        color: var(--Dark);
+        background-color: var(--Secondary);
+        border: 3px solid var(--Secondary);
+    }
+}
