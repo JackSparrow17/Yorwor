@@ -95,6 +95,7 @@ div {
         background-color: white;
         border: 0;
         padding: 5px;
+        border-radius: 4px;
     }
     .Categories a,
     .Categories a:active,
@@ -110,6 +111,7 @@ div {
     /* Recent Uploads */
     .Recent-Uploads {
         margin-bottom: 10vh;
+        padding: 10px;
     }
     /* Navigation */
     .Navigation {
@@ -135,8 +137,8 @@ div {
         height: 50px;
         padding: 10px;
         border-radius: 100%;
-        color: var(--Dark);
+        color: rgb(92, 80, 12);
         background-color: var(--Secondary);
-        border: 3px solid var(--Secondary);
+        border: 3px solid rgb(207, 178, 13);
     }
 }

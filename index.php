@@ -121,7 +121,9 @@
 
         <!-- Recent Uploads -->
         <div class="Recent-Uploads Wide">
-            Recent
+            <div class="Header-Text">
+                Top Products
+            </div>
         </div>
 
         <!-- Navigation -->
