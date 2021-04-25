@@ -1,0 +1,69 @@
+.Container {
+    height: 100vh;
+    background-color: var(--Primary);
+}
+
+.Logo {
+    margin: auto;
+    width: 70px;
+    height: 50px;
+    border: 1px solid white;
+    position: relative;
+    top: 5vh;
+}
+
+.Brand img {
+    max-width: 100%;
+}
+
+.Form-Container {
+    width: 85%;
+    margin: auto;
+    background-color: white;
+    border-radius: 25px;
+    height: 70vh;
+    position: relative;
+    top: 10vh;
+}
+
+.Header-Text {
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 5vh;
+    font-size: 1.5rem;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 7px 0;
+    width: 90%;
+    border-radius: 18px;
+    color: white;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    background-color: var(--Primary);
+    border: 0;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: white;
+}
+
+form {
+    position: relative;
+    top: 10vh;
+}
+
+input[type="submit"] {
+    width: 150px;
+}

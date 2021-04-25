@@ -4,8 +4,8 @@
         <div class="Callout Wide" id="SearchArea">
             <div class="Brand">
                 Brand
-                <a href="#"> Sign In </a>
-                <a href="#"> Register </a>
+                <a href="signin.php"> Sign In </a>
+                <a href="register.php"> Register </a>
             </div>
 
             <div class="Extras">
