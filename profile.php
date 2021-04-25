@@ -1,6 +1,6 @@
 <?php
     include('Includes/conn.php');
-   // error_reporting(0);
+    error_reporting(0);
     session_start();
     $userID = $_SESSION['userID'];
 
@@ -59,7 +59,6 @@
             <p><input type="text" name="fname" value="<?php echo $userData['fname'];?>"></p>
             <p><input type="text" name="lname" value="<?php echo $userData['lname'];?>"></p>
             <p><input type="email" name="email" value="<?php echo $userData['user_email'];?>"></p>
-            <p><input type="text" name="pswd" value="<?php echo $userData['user_password'];?>"></p>
             <p><input type="text" name="phone" value="<?php echo $userData['phone'];?>"></p>
             <p><input type="text" name="location" value="<?php echo $userData['location'];?>"></p>
             <p>
@@ -73,10 +72,9 @@
                     $fname = $_POST['fname'];
                     $lname = $_POST['lname'];
                     $email = $_POST['email'];
-                    $pswd = sha1($_POST['pswd']);
                     $phone = $_POST['phone'];
                     $location = $_POST['location'];
-                    $updateSQL = "UPDATE `users` SET `fname`='$fname',`lname`='$lname', `user_email`= '$email', `user_password`='$pswd', `phone`='$phone', `location`='$location' WHERE `user_email` = '$userID'";
+                    $updateSQL = "UPDATE `users` SET `fname`='$fname',`lname`='$lname', `user_email`= '$email', `phone`='$phone', `location`='$location' WHERE `user_email` = '$userID'";
                     
                     if(mysqli_query($conn, $updateSQL)){
                         echo "<font color='green'>Details updated successfully.</font>";

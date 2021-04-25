@@ -9,7 +9,7 @@
             </div>
 
             <div class="Extras">
-                <span id="Account"><i class="fa fa-user"></i></span>  
+                <a href="profile.php"><span id="Account"><i class="fa fa-user"></i></span></a>  
             </div>
         </div>
         <!-- Banner -->

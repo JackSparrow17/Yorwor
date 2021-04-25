@@ -47,14 +47,30 @@ input {
     color: white;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"],
 input[type="submit"] {
     background-color: var(--Primary);
     border: 0;
 }
 
-input[type="text"]::placeholder,
+input[type="email"],
+input[type="password"] {
+    background-size: 33px 33px;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+}
+
+input[type="email"] {
+    background-image: url('../Images/Icons/email.png');
+}
+
+input[type="password"] {
+    background-image: url('../Images/Icons/padlock.png');
+}
+
+input[type="email"]::placeholder,
 input[type="password"]::placeholder {
     color: white;
 }

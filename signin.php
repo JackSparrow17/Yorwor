@@ -39,7 +39,7 @@
             <?php
                 if(isset($_POST['login'])){
                     $userID = $_POST['userName'];
-                    $userPswd = sha1($_POST['userPswd']);
+                    $userPswd = $_POST['userPswd'];
                     $loginSQL = "SELECT * FROM `users` WHERE `user_email` = '$userID' AND `user_password` = '$userPswd'";
                     $loginQuery = mysqli_query($conn, $loginSQL);
 
