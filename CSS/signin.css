@@ -1,6 +1,8 @@
 .Container {
     height: 100vh;
-    background-color: var(--Primary);
+    background-image: url('../Images/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
 }
 
 .Logo {
@@ -24,6 +26,7 @@
     height: 70vh;
     position: relative;
     top: 10vh;
+    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.75);
 }
 
 .Header-Text {
@@ -67,7 +70,7 @@ input[type="email"] {
 }
 
 input[type="password"] {
-    background-image: url('../Images/Icons/padlock.png');
+    background-image: url('../Images/Icons/lock.png');
 }
 
 input[type="email"]::placeholder,
