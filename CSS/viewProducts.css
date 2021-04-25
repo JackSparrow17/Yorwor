@@ -1,0 +1,47 @@
+.Product-Details {
+    padding: 10px;
+}
+
+.Product-Details .Image img {
+    max-width: 100%;
+}
+
+.Product-Details .Name-And-Price {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: bold;
+}
+
+.Product-Details .Product-Name,
+.Product-Details .Product-Price {
+    display: flex;
+    align-items: center;
+}
+
+.Product-Details .Product-Price {
+    color: rgb(20, 199, 20);
+    justify-content: flex-end;
+}
+
+.Product-Details .Action {
+    margin-bottom: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.Product-Details button {
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 2px solid rgb(23, 197, 23);
+    color: rgb(23, 197, 23);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.Product-Details button[name="buyNowBtn"] {
+    background-color: rgb(23, 197, 23);
+    color: white;
+}

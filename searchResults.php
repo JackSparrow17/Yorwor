@@ -6,9 +6,9 @@
         $searchCategory = strtoupper($_POST['categories']);
 
         if(!empty($searchCategory)){
-            $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%' AND `category` = '$searchCategory'";
+            $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%' OR `tags` LIKE '%$searchTerm%' AND `category` = '$searchCategory'";
         }else{
-            $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%'";
+            $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%'  OR `tags` LIKE '%$searchTerm%'";
         }
 
         $searchQuery = mysqli_query($conn, $searchSQL);
@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> </title>
+    <title><?php echo $searchTerm; ?></title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,8 +58,10 @@
                             echo "
                                 <div class='Item'>
                                     
-                                    <div class='Image Wide' style='background-image: url(".$imagepath.");'>
-                                    </div>
+                                    <a href='viewProducts.php?viewStatus=".$searchData['name']."'>
+                                        <div class='Image Wide' style='background-image: url(".$imagepath.");'>
+                                        </div>
+                                    </a>
                                     <a class='Flex-Center cartBtn' href='index.php?cartValue=".$searchData['name']."' name='cartBtn'>
                                         <i class='fa fa-shopping-cart'></i>
                                     </a>
@@ -70,11 +72,12 @@
                                     </div>
                             </div>
                             ";
-                        
                         }
                     }else{
                         echo "<font color='blue'><strong><em> :( Sorry! We're Out Of Stock. Please Try Again Later.</em></strong></font>"; 
                     } 
+
+                    
                     
                 ?>
             </div>

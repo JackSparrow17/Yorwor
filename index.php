@@ -114,8 +114,10 @@
                         echo "
                             <div class='Item'>
                                 
+                                <a href='viewProducts.php?viewStatus=".$productsData['name']."'>
                                 <div class='Image Wide' style='background-image: url(".$imagepath.");'>
                                 </div>
+                                </a>
                                 <a class='Flex-Center cartBtn' href='index.php?cartValue=".$productsData['name']."' name='cartBtn'>
                                     <i class='fa fa-shopping-cart'></i>
                                 </a>
