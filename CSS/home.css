@@ -87,19 +87,18 @@ MOBILE PHONES
         position: relative;
         left: 13.5rem;
         color: gray;
-        top: 2px;
+        top: 3px;
         z-index: 2;
     }
     .Search-Categories {
         display: none;
-        width: 80%;
+        width: 100%;
         background-color: white;
-        border-radius: 8px;
-        min-height: 30vh;
+        height: 100vh;
         position: fixed;
-        top: 20vh;
-        left: 10%;
-        z-index: 2;
+        top: 0;
+        left: 0;
+        z-index: 3;
         text-align: left;
         color: var(--Dark);
         border: 2px solid var(--Dark);

@@ -19,6 +19,31 @@
     align-items: center;
 }
 
+.Product-Description {
+    border-radius: 8px;
+    background-color: white;
+    color: var(--Dark);
+    border: 2px solid rgb(172, 172, 172);
+    font-weight: bold;
+    padding: 10px;
+    min-height: 10vh;
+    margin: 10px 0;
+}
+
+.Product-Details .Product-Location {
+    color: var(--Primary);
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.Product-Details .Product-Location i {
+    margin-right: 10px;
+}
+
 .Product-Details .Product-Price {
     color: rgb(20, 199, 20);
     justify-content: flex-end;
@@ -29,19 +54,42 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    padding: 15px 0;
 }
 
-.Product-Details button {
+.Product-Details .Action button {
     padding: 10px 10px;
     width: 100%;
     border-radius: 4px;
-    border: 2px solid rgb(23, 197, 23);
-    color: rgb(23, 197, 23);
+    border: 2px solid var(--Green);
+    color: var(--Green);
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-.Product-Details button[name="buyNowBtn"] {
-    background-color: rgb(23, 197, 23);
+.Product-Details .Action button[name="buyNowBtn"] {
+    background-color: var(--Green);
     color: white;
+}
+
+.Label {
+    font-weight: bold;
+    color: var(--Dark);
+    text-align: center;
+    margin: 5px 0;
+}
+
+.Increase-Btn,
+.Decrease-Btn {
+    border: 2px solid var(--Primary);
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+select[name="quantity"] {
+    padding: 12px 10px;
+    text-align: center;
+    border: 2px solid var(--Green);
 }

@@ -21,13 +21,13 @@
 
                 <div class="Search-Form">
                     <form action="searchResults.php" method="POST">
-                        <span id="Filter"><i class="fa fa-sort"></i></span>
-                        <input type="text" placeholder="Type your search here..." name="search-word" required />
+                        <span id="Filter"><i class="fa fa-cog"></i></span>
+                        <input type="text" maxlength="20" placeholder="Type your search here..." name="search-word" required />
                         <button type="submit" name="search-btn"> <i class="fa fa-search"></i> </button>
 
                         <div class="Search-Categories">
                             <span id="closeMenu"><i class="fa fa-times-circle"></i></span>
-                           <div class="Header-Text">
+                           <div class="Header-Text" style="color: var(--Primary);">
                                 All Categories
                            </div>
 
@@ -42,6 +42,17 @@
                                <li><input class="radioBtn" type="radio" name="categories" value="phones"/> <span class="Label">Phones</span></li>
                                <li><input class="radioBtn" type="radio" name="categories" value="services"/> <span class="Label">Services</span></li>
                                <li><input class="radioBtn" type="radio" name="categories" value="supermarket"/> <span class="Label">Supermarket</span></li>
+                            </ul>
+
+                            <div class="Header-Text" style="color: var(--Primary);">
+                                Location
+                           </div>
+
+                            <ul>
+                               <li><input class="radioBtn" type="radio" name="location" value="Tumu"/> <span class="Label">Tumu</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Bolgatanga"/> <span class="Label">Bolgatanga</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Wa"/> <span class="Label">Wa</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Navrongo"/> <span class="Label">Navrongo</span></li>
                             </ul>
                         </div>
                     </form>

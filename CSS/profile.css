@@ -1,8 +1,4 @@
 @media (max-width: 720px) {
-    .Header {
-        background-color: var(--Primary);
-        min-height: 20vh;
-    }
     .Icon {
         text-align: center;
         position: relative;

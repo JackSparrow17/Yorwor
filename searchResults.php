@@ -4,9 +4,12 @@
     if(isset($_POST['search-btn'])){
         $searchTerm = $_POST['search-word'];
         $searchCategory = strtoupper($_POST['categories']);
+        $searchLocation = strtoupper($_POST['location']);
 
         if(!empty($searchCategory)){
             $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%' OR `tags` LIKE '%$searchTerm%' AND `category` = '$searchCategory'";
+        }else if(!empty($searchLocation)){
+            $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%' OR `tags` LIKE '%$searchTerm%' AND `location` = '$searchLocation'";
         }else{
             $searchSQL = "SELECT * FROM `products` WHERE `name` LIKE '%$searchTerm%'  OR `tags` LIKE '%$searchTerm%'";
         }

@@ -19,6 +19,7 @@ html {
     /*Colours*/
     --Primary: #2f89fc;
     --Secondary: #ffd615;
+    --Green: rgb(23, 197, 23);
     --Light: #f5f5f5;
     --Dark: #2b2b2b;
 }
@@ -44,6 +45,10 @@ html {
     display: none;
 }
 
+.Bold-Text {
+    font-weight: bold;
+}
+
 #closeMenu {
     color: red;
     margin: 10px;
@@ -57,4 +62,38 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+input[type="reset"]:hover {
+    box-shadow: 3px 0px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+.Back-Link {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+.Back-Link-Actual a,
+.Back-Link-Actual a:active,
+.Back-Link-Actual a:visited {
+    text-decoration: none;
+    color: white;
+    z-index: 10;
+}
+
+.Header {
+    height: 15vh;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: var(--Primary);
+    position: fixed;
+    top: 0;
+    left: 0;
 }

@@ -41,7 +41,11 @@
             <?php 
                 while($productData = mysqli_fetch_assoc($productQuery)){
                     $imagepath = "Uploads/Products/".$productData['category']."/".$productData['image'];
-                    
+                    if(empty($productData['description'])){
+                        $display= "none";
+                    }else{
+                        $display = "block";
+                    }
                     echo "
                     <div class='Image Wide'>
                         <img src='".$imagepath."' />
@@ -51,7 +55,31 @@
                         <div class='Product-Name'>".$productData['name']."</div><div class='Product-Price'>  GH&#8373;".$productData['price'].".00</div>
                     </div>
 
+                    <div class='Product-Description Wide' style='display:".$display.";'>
+                       ".$productData['description']."
+                    </div>
                     <form method='POST' action='Process/action.php'>
+                        <span class='Product-Location'>
+                            <i class='fa fa-map-marker'></i>".$productData['location']."
+                        </span>
+
+                        <span style='padding: 10px 0;'>
+                            <select name='quantity'>
+                                <option selected> Quantity </option>
+                                <option> 1 </option>
+                                <option> 2 </option>
+                                <option> 3 </option>
+                                <option> 4 </option>
+                                <option> 5 </option>
+                                <option> 6 </option>
+                                <option> 7 </option>
+                                <option> 8 </option>
+                                <option> 9 </option>
+                                <option> 10 </option>
+                            </select>
+                        </span>
+                        
+                    
                         <div class='Action Wide'>
                             <div>
                                 <button type='submit' name='addToCartBtn' value='".$productData['name']."'> Add To Cart</button>

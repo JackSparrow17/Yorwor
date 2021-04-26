@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    <a href="index.php" class="Back-Link-Actual"><span class="Back-Link"><i class="fa fa-arrow-left"></i></span></a>
     <div class="Container">
         <div class="Header Wide">
             <div class="Icon Flex-Center">
