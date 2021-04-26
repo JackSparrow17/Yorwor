@@ -92,4 +92,5 @@ select[name="quantity"] {
     padding: 12px 10px;
     text-align: center;
     border: 2px solid var(--Green);
+    background-color: var(--Light);
 }

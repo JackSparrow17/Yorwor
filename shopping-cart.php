@@ -43,10 +43,13 @@
 
         <div class="Contents Wide">
             <?php
+           
                 if(mysqli_num_rows($cartQuery) >= 1){
                     while($cartData = mysqli_fetch_assoc($cartQuery)){
                         $imagepath = "Uploads/Products/".$cartData['category']."/".$cartData['image'];
                         $_SESSION['price'] = $cartData['price'];
+                        $_SESSION['id'] = $cartData['id'];
+                        
                         echo "
                         <div class='Item Wide'>
                             <div class='Image'>
