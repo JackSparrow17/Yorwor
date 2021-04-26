@@ -42,7 +42,7 @@
             }
 
             
-            if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `oders` WHERE `product` = '$productName' AND `price` = '$price'")) >= 1){
+            if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `orders` WHERE `product` = '$productName' AND `price` = '$price'")) >= 1){
                 echo "You have already ordered for this product. Call <span>+233 20 114 4293</span> to stop the delivery.";
             }else{
                 $actionSQL = "INSERT INTO `orders`(`user`, `product`, `date`, `price`) VALUES ('$userID','$productName','$date','$price')";
