@@ -41,16 +41,14 @@
                 $price = $qty * $productData['price'];
             }
 
-            $ationSQL = "INSERT INTO `orders`(`user`, `product`, `date`, `price`) VALUES ('$userID','$productName','$date','$price')";
-                $removeSQL = "DELETE FROM `cart` WHERE `product` = '$productName' AND `price` = '$price'";
-                mysqli_query($conn, $removeSQL);
+            
             if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `oders` WHERE `product` = '$productName' AND `price` = '$price'")) >= 1){
                 echo "You have already ordered for this product. Call <span>+233 20 114 4293</span> to stop the delivery.";
             }else{
-                
+                $actionSQL = "INSERT INTO `orders`(`user`, `product`, `date`, `price`) VALUES ('$userID','$productName','$date','$price')";
+                $removeSQL = "DELETE FROM `cart` WHERE `product` = '$productName' AND `price` = '$price'";
+                mysqli_query($conn, $removeSQL);
             }
-
-            echo $price;
         }else if(isset($_POST['removeItemBtn'])){
 
             $productName = $_POST['removeItemBtn'];
