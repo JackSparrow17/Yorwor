@@ -103,7 +103,7 @@
                 </p>
                 <p><input type="email" placeholder="Email" name="userEmail" required /></p>
                 <p><input type="text" placeholder="Phone Number" name="phone" required /></p>
-                <p><input type="password" placeholder="Password" name="userPswd" required /></p>
+                <p><input type="password" placeholder="Password" name="userPswd" minlength="6" required /></p>
                 <p><?php echo $msg;?></p>
 
                 <p style="margin-top: 7vh;"><input type="submit" name="login" value="SIGN UP" /></p>

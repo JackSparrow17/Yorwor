@@ -57,12 +57,14 @@
         </div>
         <form action="profile.php" method="POST">
         <?php
+                $fname = $_POST['fname'];
+                $lname = $_POST['lname'];
+                $email = $_POST['email'];
+                $city = $_POST['location'];
+                $phone = $_POST['phone'];
+
                 if(isset($_POST['changeacc'])){
-                    $fname = $_POST['fname'];
-                    $lname = $_POST['lname'];
-                    $email = $_POST['email'];
-                    $city = $_POST['location'];
-                    $phone = $_POST['phone'];
+                    
                     $updateSQL = "UPDATE `users` SET `fname`='$fname', `lname`='$lname', `user_email`= '$email', `phone`='$phone', `location`='$city' WHERE `user_email` = '$userID'";
                     
                     if(mysqli_query($conn, $updateSQL)){
@@ -70,6 +72,11 @@
                     }else{
                         $msg = "<font color='red'>Sorry! An error occured.</font>";
                     }
+                }else if(isset($_POST['deleteAcc'])){
+                    mysqli_query($conn, "DELETE FROM `users` WHERE  `user_email` = '$userID'");
+                    mysqli_query($conn, "DELETE FROM `cart` WHERE `user` = '$userID'");
+                    mysqli_query($conn, "DELETE FROM `orders` WHERE `user` = '$userID'");
+                    header('location: register.php');
                 }
             ?>
             <p><input type="text" name="fname" value="<?php echo $userData['fname'];?>"></p>
@@ -81,7 +88,8 @@
             
             <p>
                 <input type="submit" name="changeacc" value="Update"/>
-                <a href="profile.php?logout=true" class="logoutBtn" style="background-color: red;">Log Out</a>
+                <input type="submit" name="deleteAcc" value="Delete Account"/>
+                <a href="profile.php?logout=true" class="logoutBtn" style="position: relative; top: 2vh;background-color: red;">Log Out</a>
 
                 <?php
                     if(isset($_GET['logout'])){
