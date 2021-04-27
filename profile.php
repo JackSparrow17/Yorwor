@@ -46,7 +46,7 @@
             </div>
 
             <div class="User-Name">
-                <?php echo $userData['lname']." ".$userData['lname'];?>
+                <?php echo $userData['fname']." ".$userData['lname'];?>
             </div>
         </div>
     </div>
@@ -56,12 +56,29 @@
             Change Account Details
         </div>
         <form action="profile.php" method="POST">
-           
+        <?php
+                if(isset($_POST['changeacc'])){
+                    $fname = $_POST['fname'];
+                    $lname = $_POST['lname'];
+                    $email = $_POST['email'];
+                    $city = $_POST['location'];
+                    $phone = $_POST['phone'];
+                    $updateSQL = "UPDATE `users` SET `fname`='$fname', `lname`='$lname', `user_email`= '$email', `phone`='$phone', `location`='$city' WHERE `user_email` = '$userID'";
+                    
+                    if(mysqli_query($conn, $updateSQL)){
+                        $msg = "<font color='green'>Details updated successfully. Refresh.</font>";
+                    }else{
+                        $msg = "<font color='red'>Sorry! An error occured.</font>";
+                    }
+                }
+            ?>
             <p><input type="text" name="fname" value="<?php echo $userData['fname'];?>"></p>
             <p><input type="text" name="lname" value="<?php echo $userData['lname'];?>"></p>
+            <p><input type="text" name="location" value="<?php echo $userData['location'];?>"></p>
             <p><input type="email" name="email" value="<?php echo $userData['user_email'];?>"></p>
             <p><input type="text" name="phone" value="<?php echo $userData['phone'];?>"></p>
-            <p><input type="text" name="location" value="<?php echo $userData['location'];?>"></p>
+            <p><?php echo $msg;?></p>
+            
             <p>
                 <input type="submit" name="changeacc" value="Update"/>
                 <a href="profile.php?logout=true" class="logoutBtn" style="background-color: red;">Log Out</a>
@@ -80,22 +97,7 @@
             </p>
         </form>
 
-         <?php
-                if(isset($_POST['changeacc'])){
-                    $fname = $_POST['fname'];
-                    $lname = $_POST['lname'];
-                    $email = $_POST['email'];
-                    $phone = $_POST['phone'];
-                    $location = $_POST['location'];
-                    $updateSQL = "UPDATE `users` SET `fname`='$fname',`lname`='$lname', `user_email`= '$email', `phone`='$phone', `location`='$location' WHERE `user_email` = '$userID'";
-                    
-                    if(mysqli_query($conn, $updateSQL)){
-                        echo "<font color='green'>Details updated successfully.</font>";
-                    }else{
-                        echo "<font color='red'>Sorry! An error occured.</font>";
-                    }
-                }
-            ?>
+         
     </div>
     <?php include('Includes/footer.php');?>
 </body>
