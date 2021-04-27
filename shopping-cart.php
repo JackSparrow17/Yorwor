@@ -1,9 +1,8 @@
 <?php
     include('Includes/conn.php');
-   // error_reporting(0);
+    error_reporting(0);
     session_start();
     $userID = $_SESSION['userID'];
-
     if(!empty($userID)){
         $cartSQL = "SELECT * FROM `cart` WHERE `user` = '$userID'";
         $cartQuery = mysqli_query($conn, $cartSQL);

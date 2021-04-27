@@ -1,6 +1,6 @@
 <?php
     include('../Includes/conn.php');
-    //error_reporting(0);
+    error_reporting(0);
     session_start();
     $userID = $_SESSION['userID'];
     $date = date("d-M-Y");

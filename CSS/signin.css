@@ -1,17 +1,13 @@
 .Container {
     height: 100vh;
-    background-image: url('../Images/bg.png');
-    background-repeat: no-repeat;
-    background-size: 100% 70%;
+    overflow: hidden;
 }
 
-.Logo {
-    margin: auto;
-    width: 70px;
-    height: 50px;
-    border: 1px solid white;
-    position: relative;
-    top: 5vh;
+.Image-Container {
+    background-image: url('../Images/signin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
 }
 
 .Brand img {
@@ -19,22 +15,23 @@
 }
 
 .Form-Container {
-    width: 85%;
+    width: 100%;
     margin: auto;
+    margin-top: -20vh;
     background-color: white;
     border-radius: 25px;
     height: 70vh;
     position: relative;
     top: 10vh;
-    box-shadow: 0px 3px 14px 0px rgba(0, 0, 0, 0.75);
+    padding: 20px;
 }
 
 .Header-Text {
     font-weight: bold;
     text-align: center;
-    position: relative;
-    top: 5vh;
-    font-size: 1.5rem;
+    padding: 20px;
+    font-size: 1.4rem;
+    color: var(--Primary);
 }
 
 p {
@@ -46,15 +43,14 @@ input {
     padding: 16px 20px;
     margin: 7px 0;
     width: 90%;
-    border-radius: 5px;
     color: white;
 }
 
 input[type="email"],
 input[type="password"],
 input[type="submit"] {
-    background-color: var(--Primary);
     border: 0;
+    width: 100%;
 }
 
 input[type="email"],
@@ -63,6 +59,8 @@ input[type="password"] {
     background-position: left;
     background-repeat: no-repeat;
     padding-left: 35px;
+    border-bottom: 1px solid var(--Primary);
+    color: var(--Primary);
 }
 
 input[type="email"] {
@@ -75,14 +73,17 @@ input[type="password"] {
 
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
-    color: white;
-}
-
-form {
-    position: relative;
-    top: 10vh;
+    color: var(--Primary);
 }
 
 input[type="submit"] {
-    width: 150px;
+    background: var(--Primary);
+    background: linear-gradient(157deg, #2f89fc 30%, #bd00ff 80%);
+    border-radius: 20px;
+    transition: 0.3s ease-in;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(348deg, #2f89fc 30%, #bd00ff 80%);
+    transition: 0.3s ease-in;
 }

@@ -27,8 +27,8 @@
 <body>
     <div class="Container">
     <a href="index.php" class="Back-Link-Actual"><span class="Back-Link"><i class="fa fa-arrow-left"></i></span></a>
-        <div class="Logo">
-            Brand
+        <div class="Image-Container Wide">
+        
         </div>
 
         <div class="Form-Container">
@@ -37,27 +37,30 @@
             </div>
             
             <form action="signin.php" method="POST">
-            <?php
-                if(isset($_POST['login'])){
-                    $userID = $_POST['userName'];
-                    $userPswd = $_POST['userPswd'];
-                    $loginSQL = "SELECT * FROM `users` WHERE `user_email` = '$userID' AND `user_password` = '$userPswd'";
-                    $loginQuery = mysqli_query($conn, $loginSQL);
+                <?php
+                    if(isset($_POST['login'])){
+                        $userID = $_POST['userEmail'];
+                        $userPswd = $_POST['userPswd'];
+                        $loginSQL = "SELECT * FROM `users` WHERE `user_email` = '$userID' AND `user_password` = '$userPswd'";
 
-                    if(mysqli_num_rows($loginQuery) >= 1){
-                        session_start();
-                        $_SESSION['userID'] = $userID;
-                        header('location: index.php');
-                    }else{
-                        echo "<font color='red'>Email or Password is incorrect</form>";
+                        if(mysqli_num_rows(mysqli_query($conn, $loginSQL)) >= 1){
+                            session_start();
+                            $_SESSION['userID'] = $userID;
+                            header('location: index.php');
+                        }else{
+                            $msg = "<font color='red'>Email or Password is incorrect</font>";
+                        }
                     }
-                }
-            ?>
-                <p><input type="email" placeholder="Email" name="userName" required /></p>
+                ?>
+
+                <p><input type="email" placeholder="Email" name="userEmail" required /></p>
                 <p><input type="password" placeholder="Password" name="userPswd" required /></p>
                 <p style="text-align: right; padding: 0 10px;"><a href="#" style="color: gray; text-decoration: none;"> Forgot Password?</a></p>
-                <p style="margin-top: 7vh;"><input type="submit" name="login" value="LOGIN" /></p>
+                <p><?php echo $msg;?></p>
+                
+                <p style="margin-top: 7vh;"><input type="submit" name="login" value="SIGN IN" /></p>
                 <p style="margin: 10px 0;">Dont have an account? <a href="register.php" style="color: var(---Primary);"> Register </a></p>
+        
             </form>
 
             

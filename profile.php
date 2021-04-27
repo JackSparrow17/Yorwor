@@ -64,7 +64,19 @@
             <p><input type="text" name="location" value="<?php echo $userData['location'];?>"></p>
             <p>
                 <input type="submit" name="changeacc" value="Update"/>
-                <input type="reset" value="Clear"/>
+                <a href="profile.php?logout=true" class="logoutBtn" style="background-color: red;">Log Out</a>
+
+                <?php
+                    if(isset($_GET['logout'])){
+                        mysqli_close($conn);
+                        unset($_SESSION['price']);
+                        unset($_SESSION['userID']);
+                        unset($_GET['logout']);
+                        session_destroy();
+                        header("location: signin.php");
+                       
+                    }
+                ?>
             </p>
         </form>
 

@@ -24,17 +24,25 @@
         font-weight: bold;
         color: white;
     }
-    input {
+    input,
+    .logoutBtn,
+    .logoutBtn:active,
+    .logoutBtn:visited {
         padding: 10px 20px;
         margin: 5px 0;
         border: 1px solid var(--Primary);
         border-radius: 4px;
         width: 100%;
+        font-size: 0.9rem;
     }
-    input[type="submit"] {
+    input[type="submit"],
+    .logoutBtn,
+    .logoutBtn:active,
+    .logoutBtn:visited {
         width: 49%;
         color: white;
         background-color: var(--Primary);
+        text-decoration: none;
     }
     input[type="reset"] {
         width: 49%;

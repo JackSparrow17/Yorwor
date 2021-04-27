@@ -49,10 +49,10 @@
                            </div>
 
                             <ul>
-                               <li><input class="radioBtn" type="radio" name="location" value="Tumu"/> <span class="Label">Tumu</span></li>
-                               <li><input class="radioBtn" type="radio" name="location" value="Bolgatanga"/> <span class="Label">Bolgatanga</span></li>
-                               <li><input class="radioBtn" type="radio" name="location" value="Wa"/> <span class="Label">Wa</span></li>
-                               <li><input class="radioBtn" type="radio" name="location" value="Navrongo"/> <span class="Label">Navrongo</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Tumu, Upper West"/> <span class="Label">Tumu, Upper West</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Wa, Upper West"/> <span class="Label">Wa, Upper West</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Bolgatanga, Upper East"/> <span class="Label">Bolgatanga, Upper East</span></li>
+                               <li><input class="radioBtn" type="radio" name="location" value="Navrongo, Upper East"/> <span class="Label">Navrongo, Upper East</span></li>
                             </ul>
                         </div>
                     </form>
