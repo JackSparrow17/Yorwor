@@ -59,7 +59,7 @@
                     $cartHistoryData = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `cart` WHERE `user` = '$userID'"));
                     $cartMValue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(price) as sum_score FROM `cart` WHERE `user` = '$userID'"));
                     $orderHistoryData = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `orders` WHERE `user` = '$userID' AND `status` = 'pending'"));
-                    $ordersMValue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(price) as sum_score FROM `orders` WHERE `user` = '$userID'"));
+                    $ordersMValue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(price) as sum_score FROM `orders` WHERE `user` = '$userID' AND `status` = 'pending'"));
                 ?>
                 <div>
                     <h3> Cart </h3>

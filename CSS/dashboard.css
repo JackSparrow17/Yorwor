@@ -60,7 +60,27 @@ MOBILE PHONES
         /* Overview */
         .Overview {
             color: var(--Dark);
-            margin-top: 10vh;
+            margin-top: 12vh;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .Overview .Item {
+            padding: 10px;
+            border: 1px solid var(--Primary);
+            background-color: white;
+            border-radius: 8px;
+        }
+        .Overview .Item .Label {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--Green);
+        }
+        .Overview .Item .Data {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--Primary);
         }
         input,
         select {

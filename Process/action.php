@@ -33,7 +33,7 @@
             $image = $productData['image'];
             $location = $productData['location'];
             $actionSQL = "INSERT INTO `cart`(`user`, `product`, `date`, `price`, `image`, `category`, `location`) VALUES ('$userID','$productName','$date', '$price', '$image', '$category', '$location')";
-            header("location: ../shopping-cart.php");
+            header("location: ../index.php");
             
         }else if(isset($_POST['buyNowBtn'])){
             
@@ -46,7 +46,7 @@
                 $price = $qty * $productData['price'];
             }
 
-            if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `orders` WHERE `product` = '$productName' AND `price` = '$price'")) >= 1){
+            if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `orders` WHERE `product` = '$productName' AND `price` = '$price' AND `status` = '$pending'")) >= 1){
                 
                 $removeSQL = "DELETE FROM `cart` WHERE `product` = '$productName' AND `price` = '$price' AND `id` = '$id'";
                 mysqli_query($conn, $removeSQL);

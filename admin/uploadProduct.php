@@ -23,6 +23,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        .Overview{
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,13 +43,20 @@
                 <p><input type="text" placeholder="Name of product" name="pname" required/></p>
                 <p><input type="text" placeholder="Price" name="price" required/></p>
                 <p><input type="text" placeholder="Brand" name="brand"/></p>
-                <p><span class="Label"> Date Of Manufacture </span><p>
-                <p><input type="date" name="mdate"/></p>
-                <p><span class="Label"> Date Of Expiry </span><p>
-                <p><input type="date" name="exdate"/></p>
+                <p>
+                    <select name="location">
+                        <option selected> City </option>
+                        <option> Tumu, Upper West </option>
+                        <option> Wa, Upper West </option>
+                        <option> Bolgatanga, Upper East </option>
+                        <option> Navrongo, Upper East </option>
+                        
+                    </select>
+                </p>
                             
                 <script> CKEDITOR.replace( 'pdesc' ); </script>
-                <p><textarea class="wide" name="pdesc" placeholder="Decription"></textarea></p>
+                <p><textarea class="wide" name="pdesc" placeholder="Decription" style="width: 95%; min-height: 100px; margin: 10px 0;"></textarea></p>
+                <p><textarea class="wide" name="tags" placeholder="Tags" style="width: 95%; min-height: 100px; margin: 10px 0;"></textarea></p>
                 
                 <p>
                     <select name="pcategory">
@@ -72,11 +85,12 @@
 
     if(isset($_POST['upproduct'])){
         $productName = strtoupper($_POST['pname']);
-        $mDate = strtoupper($_POST['mdate']);
+        $loc = strtoupper($_POST['location']);
         $brand = strtoupper($_POST['brand']);
         $postDate = date("D-M-Y");
-        $exDate = strtoupper($_POST['exdate']);
-        $description = strtoupper($_POST['pdesc']);
+        $text = $_POST['pdesc'];
+        $tags = $_POST['tags'];
+        $description = str_replace(" ", "<br />", $text);
         $category = strtoupper($_POST['pcategory']);
         $price = $_POST['price'];
         
@@ -90,13 +104,15 @@
 
         if($category != "CHOOSE CATEGORY"){
             if(move_uploaded_file($imagetmpname, $targetpath)){
-                $psql = "INSERT INTO `products`(`name`, `category`, `price`, `date`, `image`, `mdate`, `expdate`, `brand`, `description`) 
-                VALUES ('$productName','$category','$price','$postDate', '$imagenewname', '$mDate', '$exDate', '$brand', '$description')";
+                $psql = "INSERT INTO `products`(`name`, `category`, `price`, `date`, `image`, `brand`, `description`, `location`,  `tags`) 
+                VALUES ('$productName','$category','$price','$postDate', '$imagenewname','$brand','$description','$loc','$tags')";
                 echo "Uploaded!";
 
                 if(!mysqli_query($conn, $psql)){
                     echo "Failed";
                 }
+            }else{
+                echo "Failed";
             }
         }else{ 
             echo "Please choose a category";
