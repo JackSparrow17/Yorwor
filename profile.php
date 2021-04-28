@@ -51,7 +51,46 @@
         </div>
     </div>
 
-    <div class="Account-Details Wide">
+    
+    <div class="Account-Details Wide" style="overflow: scroll;">
+        <!-- History -->
+    <div class="History">
+                <?php
+                    $cartHistoryData = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `cart` WHERE `user` = '$userID'"));
+                    $cartMValue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(price) as sum_score FROM `cart` WHERE `user` = '$userID'"));
+                    $orderHistoryData = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `orders` WHERE `user` = '$userID' AND `status` = 'pending'"));
+                    $ordersMValue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(price) as sum_score FROM `orders` WHERE `user` = '$userID'"));
+                ?>
+                <div>
+                    <h3> Cart </h3>
+                    <p> 
+                        <i class="fa fa-shopping-cart"></i> 
+                        <?php 
+                            if(is_null($cartHistoryData)){
+                                $cartHistoryData = 0;
+                            }
+                            echo " ".$cartHistoryData." item(s).";
+                            echo " <font color='green'>GH&#8373;".$cartMValue['sum_score'].".00</font>";
+                        ?> 
+                    </p>
+                </div>
+
+                <div>
+                    <h3> Orders </h3>
+                    <p> 
+                        <i class="fa fa-truck"></i> 
+                        <?php 
+                            if(is_null($orderHistoryData)){
+                                $orderHistoryData = 0;
+                            }
+                            echo " ".$orderHistoryData." pending order(s).";
+                            echo " <font color='green'>GH&#8373;".$ordersMValue['sum_score'].".00</font>";
+                        ?> 
+                    </p>
+                </div>
+               
+        </div>
+        <!-- End of History -->
         <div class="Header-Text">
             Change Account Details
         </div>
@@ -85,7 +124,7 @@
             <p><input type="email" name="email" value="<?php echo $userData['user_email'];?>"></p>
             <p><input type="text" name="phone" value="<?php echo $userData['phone'];?>"></p>
             <p><?php echo $msg;?></p>
-            
+            <!-- <p><?php //echo str_replace(' ', '</br>', "Hello World");?></p> -->
             <p>
                 <input type="submit" name="changeacc" value="Update"/>
                 <input type="submit" name="deleteAcc" value="Delete Account"/>
@@ -103,7 +142,11 @@
                     }
                 ?>
             </p>
+
+            
         </form>
+
+        
 
          
     </div>

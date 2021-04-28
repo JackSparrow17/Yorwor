@@ -13,7 +13,7 @@
             </div>
         </div>
         <!-- Banner -->
-        <div class="Banner Wide">
+        <div class="Banner Wide" id="searchBar">
             <div class="Inner">
                 <div class="Text">
                     What are you looking for?

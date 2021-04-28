@@ -55,4 +55,17 @@
         padding: 10px;
         margin-top: 15vh;
     }
+    .History {
+        background-color: white;
+        padding: 10px;
+    }
+    .History div {
+        padding: 6px 0;
+        border-bottom: 2px solid var(--Primary);
+        border-top: 2px solid var(--Primary);
+    }
+    .History div:last-child {
+        border-top: 0;
+        margin-bottom: 5vh;
+    }
 }

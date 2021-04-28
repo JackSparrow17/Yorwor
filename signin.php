@@ -40,7 +40,7 @@
                 <?php
                     if(isset($_POST['login'])){
                         $userID = $_POST['userEmail'];
-                        $userPswd = $_POST['userPswd'];
+                        $userPswd = hash('sha256', $_POST['userPswd']);
                         $loginSQL = "SELECT * FROM `users` WHERE `user_email` = '$userID' AND `user_password` = '$userPswd'";
 
                         if(mysqli_num_rows(mysqli_query($conn, $loginSQL)) >= 1){

@@ -41,6 +41,15 @@
             color: var(--Primary);
             width: 100%;
             border-radius: 20px;
+            transition: 0.3s ease-in;
+        }
+
+        .Form-Container input[type="text"]:focus,
+        .Form-Container input[type="email"]:focus,
+        .Form-Container input[type="password"]:focus, 
+        select:hover{
+            border: 2px solid var(--Primary);
+            transition: 0.3s ease-in;
         }
 
         input::placeholder{
@@ -65,7 +74,7 @@
             <?php
                 if(isset($_POST['login'])){
                     $userID = $_POST['userEmail'];
-                    $userPswd = $_POST['userPswd'];
+                    $userPswd = hash('sha256', $_POST['userPswd']);
                     $confirmSQL = "SELECT * FROM `users` WHERE `user_email` = '$userID' AND `user_password` = '$userPswd'";
                     $confirmQuery = mysqli_query($conn, $confirmSQL);
 
